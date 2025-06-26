@@ -11,7 +11,7 @@
 <body>
     <section>
         <nav class="navbar nav navbar-expand-lg mt-0">
-            <div class="container d-flex justify-content-between align-items-center">
+            <div class="container-fluid">
                 <div class="d-flex align-items-center">
                     <img src="images/logo@2x.png" alt="Logo" class="me-3 p" />
                     <div class="d-flex flex-column">
@@ -23,11 +23,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ms-auto">
-                        <a class="nav-link active a me-3" aria-current="page" href="#">Home</a>
-                        <a class="nav-link me-3" href="#">News</a>
-                        <a class="nav-link me-3" href="#">Live Camera</a>
-                        <a class="nav-link me-3" href="#">Photos</a>
+                    <div class="navbar-nav ms-auto gap-2">
+                        <a class="nav-link active a" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">News</a>
+                        <a class="nav-link" href="#">Live Camera</a>
+                        <a class="nav-link" href="#">Photos</a>
                         <a class="nav-link" href="#">Contact</a>
                     </div>
                 </div>
@@ -35,28 +35,35 @@
         </nav>
     </section>
 
-    <section>
+    <section class="py-4">
         <div class="container">
-            <div class="d-flex justify-content-center align-items-center">
-                <input type="text" class="mt-5" placeholder="Find your location..." id="search">
-                <button type="button" value="Find" id="submit" class="mt-4">Find</button>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Find your location..." id="search">
+                        <button type="button" id="submit" class="btn px-5 py-2">Find</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="container py-4">
+    <section class="container py-4">
         <div class="table-responsive">
             <table class="table table-borderless text-center align-middle weather-table">
                 <thead>
                     <tr>
-                        <th>Wednesday, 25 Jun</th>
-                        <th>Thursday, 26 Jun</th>
-                        <th>Friday, 27 Jun</th>
+                        <th scope="col" class="d-none d-md-table-cell">Wednesday, 25 Jun</th>
+                        <th scope="col" class="d-none d-md-table-cell">Thursday, 26 Jun</th>
+                        <th scope="col" class="d-none d-md-table-cell">Friday, 27 Jun</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="fs-2">
-                        <td  data-label="Place">Cairo</td>
+                    <tr class="fs-4 d-md-none">
+                        <td colspan="3" class="fw-bold">Cairo - Wednesday, 25 Jun</td>
+                    </tr>
+                    <tr class="fs-2 d-none d-md-table-row">
+                        <td data-label="Place">Cairo</td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -66,9 +73,9 @@
                         <td><span class="temp">38.1°C</span></td>
                     </tr>
                     <tr>
-                        <td data-label="Condition"><img src="https://cdn.weatherapi.com/weather/64x64/night/113.png" alt="Clear" width="32" style="margin-right: 8px;">Clear</td>
-                        <td><img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="Sunny" width="32" style="margin-right: 8px;">Sunny</td>
-                        <td><img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="Sunny" width="32" style="margin-right: 8px;">Sunny</td>
+                        <td data-label="Condition"><img src="https://cdn.weatherapi.com/weather/64x64/night/113.png" alt="Clear" width="32" class="me-2">Clear</td>
+                        <td><img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="Sunny" width="32" class="me-2">Sunny</td>
+                        <td><img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="Sunny" width="32" class="me-2">Sunny</td>
                     </tr>
                     <tr>
                         <td data-label="Precipitation">20%</td>
@@ -83,20 +90,24 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </section>
 
     <footer class="py-5 bg-dark text-center text-white">
-        <div class="container py-4">
-            <div class="d-flex flex-column align-items-center">
-                <input type="text" class="form-control mb-2" placeholder="Enter your email to subscribe" id="enter">
-                <button type="button" id="subscribe" class="btn btn-primary mb-3">Subscribe</button>
-                <div class="d-flex justify-content-center gap-2">
-                    <i class="bi bi-facebook icon-circle"></i>
-                    <i class="bi bi-twitter icon-circle"></i>
-                    <i class="bi bi-pinterest icon-circle"></i>
-                    <i class="bi bi-google icon-circle"></i>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Enter your email to subscribe" id="enter">
+                        <button type="button" id="subscribe" class="btn px-4 py-2">Subscribe</button>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3 mb-4">
+                        <i class="bi bi-facebook icon-circle"></i>
+                        <i class="bi bi-twitter icon-circle"></i>
+                        <i class="bi bi-pinterest icon-circle"></i>
+                        <i class="bi bi-google icon-circle"></i>
+                    </div>
+                    <p class="mb-0 pp">Copyright 2014 Company name. Designed by Themezy. All rights reserved.</p>
                 </div>
-                <p class="mb-0 mt-5 pp">Copyright 2014 Company name. Designed by Themezy. All rights reserved.</p>
             </div>
         </div>
     </footer>
